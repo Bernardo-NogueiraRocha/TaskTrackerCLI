@@ -2,23 +2,23 @@
     {
         "id": 1,
         "name": "something",
-        "status": "Todo",
+        "status": "done",
         "createdAt": "2024-08-27T22:36:38.829558",
         "updatedAt": "2024-08-27T22:36:38.829580"
     },
     {
         "id": 2,
-        "name": "Anything",
-        "status": "Todo",
+        "name": "watch_alien_romulus",
+        "status": "done",
         "createdAt": "2024-08-27T22:36:47.114841",
-        "updatedAt": "2024-08-27T22:36:47.114868"
+        "updatedAt": "2024-08-28T09:57:36.391016"
     },
     {
         "id": 3,
         "name": "buy groceries",
-        "status": "Todo",
+        "status": "done",
         "createdAt": "2024-08-28T08:54:57.192964",
-        "updatedAt": "2024-08-28T08:54:57.192979"
+        "updatedAt": "2024-08-28T10:01:36.723156"
     },
     {
         "id": 4,
@@ -26,5 +26,19 @@
         "status": "Todo",
         "createdAt": "2024-08-28T08:56:08.419088",
         "updatedAt": "2024-08-28T08:56:08.419119"
+    },
+    {
+        "id": 5,
+        "name": "buy groceries 54",
+        "status": "todo",
+        "createdAt": "2024-08-28T09:51:17.609537",
+        "updatedAt": "2024-08-28T09:51:17.609571"
+    },
+    {
+        "id": 6,
+        "name": "buy white rice",
+        "status": "todo",
+        "createdAt": "2024-08-28T10:04:36.698536",
+        "updatedAt": "2024-08-28T10:04:36.698563"
     }
 ]
