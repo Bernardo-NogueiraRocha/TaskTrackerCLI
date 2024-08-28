@@ -109,7 +109,7 @@ class Task:
         parts = command.split(maxsplit=1)
         base_command = parts[0]
         if base_command not in ["add", "list", "update", "delete", "mark-done", "mark-in-progress"]:
-            print("invalid command")
+            print("Invalid command. Valid commands are: add, list, update, delete, mark-done, mark-in-progress, clear")
             return
         
         if base_command == "add":
@@ -155,5 +155,3 @@ class Task:
                     print("Invalid task ID.")
             else:
                 print("Usage: mark-<status> <task_id>")
-        else:
-            print("Invalid command. Valid commands are: add, list, update, delete, mark-done, mark-in-progress, clear")
