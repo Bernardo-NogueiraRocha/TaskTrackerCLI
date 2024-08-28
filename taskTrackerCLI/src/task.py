@@ -11,8 +11,7 @@ class Task:
         else:
             self.id = 1
 
-    @staticmethod
-    def load_tasks():
+    def load_tasks(self):
         try:
             with open("taskTrackerCLI/data/data.json", "r") as file:
                 return json.load(file)
@@ -52,11 +51,24 @@ class Task:
                 )
             print(tabulate(data, tablefmt="fancy_grid", headers="firstrow"))
         else:
+            print(params)
             filtered_tasks = [
                 task for task in self.instances if task["status"] == params.lower()
             ]
             if filtered_tasks:
-                self.list_tasks(filtered_tasks)
+                headers = ["Id", "Name", "Status", "Created At", "Updated At"]
+                data = [headers]
+                for task in filtered_tasks:
+                    data.append(
+                    [
+                        task["id"],
+                        task["name"],
+                        task["status"],
+                        task["createdAt"],
+                        task["createdAt"],
+                    ]
+                )
+                print(tabulate(data, tablefmt="fancy_grid", headers="firstrow"))
             else:
                 print(f"No tasks found with status '{params}'.")
 
@@ -103,14 +115,15 @@ class Task:
     def handle_cli(self, command:str):
         if command.startswith("clear"):
             os.system("clear")
-            return
-
+            return 1
+        if command.startswith("exit"):
+            return 0
         # split at the first found whitespace
         parts = command.split(maxsplit=1)
         base_command = parts[0]
         if base_command not in ["add", "list", "update", "delete", "mark-done", "mark-in-progress"]:
             print("Invalid command. Valid commands are: add, list, update, delete, mark-done, mark-in-progress, clear")
-            return
+            return 1
         
         if base_command == "add":
             if len(parts) > 1:
@@ -155,3 +168,4 @@ class Task:
                     print("Invalid task ID.")
             else:
                 print("Usage: mark-<status> <task_id>")
+        return 1

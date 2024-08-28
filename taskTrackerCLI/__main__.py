@@ -2,5 +2,6 @@ from taskTrackerCLI.src.task import Task
 
 tasks = Task()
 #tasks.addTask("Buy groceries")
-while True:
-    tasks.handle_cli(input(">>task-cli "))
+output = 1
+while output!=0:
+    output = tasks.handle_cli(input(">>task-cli "))
