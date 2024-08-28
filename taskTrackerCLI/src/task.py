@@ -79,6 +79,7 @@ class Task:
         return None
 
     def update_task(self, task_id, new_name):
+        print(new_name)
         task_index = self.search_task(task_id)
         if task_index is not None:
             self.instances[task_index]["name"] = new_name
@@ -136,12 +137,13 @@ class Task:
             else:
                 self.list_tasks()
         elif base_command == "update":
+            print(parts)
             if len(parts) > 1:
-                update_parts = parts[1].split()
+                update_parts = parts[1].split(maxsplit=1)
                 if len(update_parts) == 2:
                     try:
                         task_id = int(update_parts[0])
-                        new_name = update_parts[1]
+                        new_name = " ".join(update_parts[1:])
                         self.update_task(task_id, new_name)
                     except ValueError:
                             print("Invalid task ID.")

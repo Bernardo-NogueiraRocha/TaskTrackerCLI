@@ -29,9 +29,9 @@
     },
     {
         "id": 6,
-        "name": "buy white rice",
-        "status": "todo",
+        "name": "buy brown rice",
+        "status": "done",
         "createdAt": "2024-08-28T10:04:36.698536",
-        "updatedAt": "2024-08-28T10:04:36.698563"
+        "updatedAt": "2024-08-28T10:36:56.385931"
     }
 ]
